@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistem Pengembalian Barang</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    form { max-width: 400px; margin: auto; }
+    input, button { margin: 8px 0; width: 100%; padding: 8px; }
+    button { background: #2196F3; color: white; border: none; cursor: pointer; }
+    button:hover { background: #1769aa; }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">Sistem Pengembalian Barang</h1>
+  <form id="form-barang">
+    <input id="nama" placeholder="Nama" required>
+    <input id="telefon" placeholder="Telefon" required>
+    <input id="matrik" placeholder="Matrik" required>
+    <input id="universiti" placeholder="Universiti" required>
+    <input id="lokasi" placeholder="Lokasi" required>
+    <input id="tarikh_hantar" type="date" required>
+    <input id="nota" placeholder="Nota">
+    <button type="submit">Hantar</button>
+  </form>
+  <div id="result" style="text-align:center; margin-top:20px;"></div>
+  <script src="script.js"></script>
+</body>
+</html>
