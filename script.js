@@ -37,7 +37,7 @@ document.getElementById("form-barang").addEventListener("submit", function(e) {
     image: imageBase64 // base64 string, kosong jika tiada gambar
   };
 
-  fetch("https://script.google.com/macros/s/AKfycby5N0bXpzVXa87_BXWoixu0V29ZuKrwe5oZzaqef0e5EyDEtrkAw7Zx-m_-6aol6KlMDg/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwinzBuThzSvTRFoMvZIhrCV59w1WIiWkSWSslCk_LdswTst9QNRdlEJKYliC2byHjZ/exec", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
