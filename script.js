@@ -2,11 +2,17 @@ console.log("Sistem Pengembalian Barang dimulakan.");
 
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbylpgQXbW1P8hYE2koWQ_zX6P3TyUk3eC0YslzvlYvU2Gl9Y4ke5PKbHMmJLHSPN9_S/exec";
 
-// preview image
 const imageInput = document.getElementById("image");
 const imagePreview = document.getElementById("imagePreview");
+const addImageBtn = document.getElementById("addImageBtn");
 let imageBase64 = "";
 
+// bila klik "Add Image", trigger input file
+addImageBtn.addEventListener("click", () => {
+  imageInput.click();
+});
+
+// preview image
 imageInput.addEventListener("change", function () {
   if (imageInput.files && imageInput.files[0]) {
     const reader = new FileReader();
