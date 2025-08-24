@@ -1,30 +1,41 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    margin: 0;
-    padding: 0;
+  background: linear-gradient(135deg, #800000, #f8d7da); 
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Georgia', serif;
+  color: #3e0d12;
 }
 
-h1 {
-    color: #333;
-    text-align: center;
-    margin-top: 40px;
+/* Header / Navigation */
+header, nav {
+  background: linear-gradient(90deg, #800000, #a83256);
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 3px solid #f8d7da;
 }
 
-a {
-    display: block;
-    text-align: center;
-    margin-top: 24px;
-    background: #007bff;
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    width: 280px;
-    margin-left: auto;
-    margin-right: auto;
+/* Card / Section */
+.card, .section {
+  background: rgba(255, 228, 233, 0.9); /* rose pink lembut transparent */
+  border: 2px solid #800000;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px;
+  box-shadow: 0 4px 10px rgba(128, 0, 0, 0.3);
 }
 
-a:hover {
-    background: #0056b3;
+/* Button */
+button {
+  background: linear-gradient(90deg, #800000, #a83256);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #a83256, #800000);
 }
