@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sistem Pengembalian Barang</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h1>Sistem Pengembalian Barang</h1>
 
     <form id="returnForm">
-      <label for="nama">Nama</label>
-      <input id="nama" name="nama" class="form-control" required />
+      <label>Nama</label>
+      <input name="nama" class="form-control" required>
 
-      <label for="telefon">Telefon</label>
-      <input id="telefon" name="telefon" class="form-control"
-             type="tel" inputmode="numeric"
-             placeholder="contoh: 0123456789"
-             required />
+      <label>Telefon</label>
+      <input name="telefon" class="form-control" type="tel" required>
 
-      <label for="matrik">Matrik</label>
-      <input id="matrik" name="matrik" class="form-control" required />
+      <label>Matrik</label>
+      <input name="matrik" class="form-control" required>
 
-      <label for="universiti">Universiti</label>
-      <select id="universiti" name="universiti" class="form-select" required>
-        <option value="">-- Pilih Universiti --</option>
+      <label>Universiti</label>
+      <select name="universiti" class="form-select" required>
+        <option value="">-- Pilih --</option>
         <option value="UNIMAS">UNIMAS</option>
         <option value="UiTM">UiTM</option>
         <option value="Lain-lain">Lain-lain</option>
       </select>
 
-      <label for="lokasi">Lokasi</label>
-      <input id="lokasi" name="lokasi" class="form-control" required />
+      <label>Lokasi</label>
+      <input name="lokasi" class="form-control" required>
 
-      <label for="tarikh_hantar">Tarikh Hantar</label>
-      <input id="tarikh_hantar" name="tarikh_hantar" type="date" class="form-control" required />
+      <label>Tarikh Hantar</label>
+      <input name="tarikh_hantar" type="date" class="form-control" required>
 
-      <label for="nota">Nota</label>
-      <textarea id="nota" name="nota" class="form-control" rows="3" placeholder="(jika ada)"></textarea>
+      <label>Nota</label>
+      <textarea name="nota" class="form-control"></textarea>
 
-      <label for="image">Gambar Barang</label>
-      <input type="file" id="image" name="image" accept="image/*" style="display:none" />
-      <button type="button" class="btn-upload" id="addImageBtn">Add Image</button>
-      <img id="imagePreview" class="image-preview" style="display:none" alt="Pratonton gambar" />
+      <label>Gambar Barang</label>
+      <input type="file" id="image" accept="image/*" style="display:none">
+      <button type="button" id="addImageBtn" class="btn-upload">Tambah Gambar</button>
+      <img id="imagePreview" class="image-preview" style="display:none">
 
-      <button type="submit" id="submitBtn" class="btn-maroon">
-        Hantar
-      </button>
+      <button type="submit" id="submitBtn" class="btn-maroon">Hantar</button>
     </form>
 
-    <div id="result" role="status" aria-live="polite"></div>
+    <div id="result"></div>
   </div>
 
   <script src="script.js"></script>
