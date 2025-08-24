@@ -1,41 +1,122 @@
+/* Mengekalkan rupa asal (warna/typografi), cuma dipusatkan di satu fail) */
 body {
-  background: linear-gradient(135deg, #800000, #f8d7da); 
-  min-height: 100vh;
-  margin: 0;
+  background: #fbe3eb;
   font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
   color: #3e0d12;
 }
 
-/* Header / Navigation */
-header, nav {
-  background: linear-gradient(90deg, #800000, #a83256);
-  color: #fff;
-  padding: 15px;
+.container {
+  max-width: 430px;
+  margin: 40px auto 0 auto;
+  background: #fff7fb;
+  border: 3.5px solid #801336;
+  border-radius: 22px;
+  box-shadow: 0 4px 18px #cfa3b9;
+  padding: 28px 18px 20px 18px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+h1 {
   text-align: center;
-  border-bottom: 3px solid #f8d7da;
+  color: #801336;
+  font-size: 2rem;
+  margin-bottom: 22px;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px #f8bbd0;
 }
 
-/* Card / Section */
-.card, .section {
-  background: rgba(255, 228, 233, 0.9); /* rose pink lembut transparent */
-  border: 2px solid #800000;
-  border-radius: 15px;
-  padding: 20px;
-  margin: 15px;
-  box-shadow: 0 4px 10px rgba(128, 0, 0, 0.3);
+label {
+  color: #801336;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  display: block;
 }
 
-/* Button */
-button {
-  background: linear-gradient(90deg, #800000, #a83256);
-  color: white;
+.form-control, .form-select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.5px solid #cfa3b9;
+  border-radius: 9px;
+  background: #fde5ed;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  transition: border .2s;
+  box-sizing: border-box;
+  display: block;
+}
+
+.form-control:focus, .form-select:focus {
+  border: 2px solid #801336;
+  outline: none;
+  background: #fff0f6;
+}
+
+.btn-maroon {
+  background: #801336;
+  color: #fff7fb;
   border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
+  border-radius: 10px;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 1.09rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  box-shadow: 0 2px 8px #cfa3b9;
+  margin-top: 5px;
+  transition: background .2s, opacity .2s;
 }
 
-button:hover {
-  background: linear-gradient(90deg, #a83256, #800000);
+.btn-maroon:hover { background: #c72c6c; }
+.btn-maroon[disabled] { opacity: 0.6; cursor: not-allowed; }
+
+.btn-upload {
+  background: #cfa3b9;
+  color: #801336;
+  border: none;
+  border-radius: 7px;
+  padding: 7px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px #dcdcdc;
+  cursor: pointer;
+  transition: background .2s;
+  display: block;
+}
+
+.btn-upload:hover { background: #fbe3eb; }
+
+.image-preview {
+  display: block;
+  margin: 0 auto 10px auto;
+  max-width: 90%;
+  max-height: 160px;
+  border: 2px dashed #801336;
+  border-radius: 12px;
+  background: #fde5ed;
+  object-fit: contain;
+}
+
+#result {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 1rem;
+  color: #801336;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.result-ok { color: #116d3b; }
+.result-err { color: #8b224a; }
+
+@media (max-width: 600px) {
+  .container { max-width: 97vw; padding: 10px 3vw; margin-top: 18px; }
+  h1 { font-size: 1.3rem; }
+  .image-preview { max-width: 95vw; }
 }
