@@ -1,82 +1,58 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sistem Pengembalian Barang</title>
-  <style>
-    /* (style kau maintain tak usik) */
-    body {
-      background: #fbe3eb;
-      font-family: 'Georgia', serif;
-      margin: 0;
-      padding: 0;
-    }
-    .container { max-width: 430px; margin: 40px auto 0 auto; background: #fff7fb;
-      border: 3.5px solid #801336; border-radius: 22px; box-shadow: 0 4px 18px #cfa3b9;
-      padding: 28px 18px 20px 18px; box-sizing: border-box; overflow: hidden;}
-    h1 { text-align: center; color: #801336; font-size: 2rem; margin-bottom: 22px;
-      font-family: 'Times New Roman', Times, serif; letter-spacing: 1px; text-shadow: 1px 1px 2px #f8bbd0;}
-    label { color: #801336; font-weight: bold; font-size: 1rem; margin-bottom: 5px; display: block; }
-    .form-control, .form-select { width: 100%; padding: 8px 10px; border: 1.5px solid #cfa3b9;
-      border-radius: 9px; background: #fde5ed; font-size: 1rem; margin-bottom: 15px;
-      transition: border .2s; box-sizing: border-box; display: block; }
-    .form-control:focus, .form-select:focus { border: 2px solid #801336; outline: none; background: #fff0f6; }
-    .btn-maroon { background: #801336; color: #fff7fb; border: none; border-radius: 10px;
-      padding: 10px 0; width: 100%; font-size: 1.09rem; font-weight: bold; cursor: pointer;
-      box-shadow: 0 2px 8px #cfa3b9; margin-top: 5px; transition: background .2s; }
-    .btn-maroon:hover { background: #c72c6c; }
-    .image-preview { display: block; margin: 0 auto 10px auto; max-width: 90%; max-height: 160px;
-      border: 2px dashed #801336; border-radius: 12px; background: #fde5ed; object-fit: contain; }
-    #result { text-align: center; margin-top: 16px; font-size: 1rem; color: #801336;
-      font-weight: bold; letter-spacing: 1px; }
-    .btn-upload { background: #cfa3b9; color: #801336; border: none; border-radius: 7px;
-      padding: 7px 0; font-size: 1rem; font-weight: bold; width: 100%; margin-bottom: 12px;
-      box-shadow: 0 1px 4px #dcdcdc; cursor: pointer; transition: background .2s; display: block; }
-    .btn-upload:hover { background: #fbe3eb; }
-    @media (max-width: 600px) { .container { max-width: 97vw; padding: 10px 3vw; margin-top: 18px; }
-      h1 { font-size: 1.3rem; } .image-preview { max-width: 95vw; } }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>Sistem Pengembalian Barang</h1>
+
     <form id="returnForm">
       <label for="nama">Nama</label>
-      <input id="nama" name="nama" class="form-control" required>
+      <input id="nama" name="nama" class="form-control" required />
 
       <label for="telefon">Telefon</label>
-      <input id="telefon" name="telefon" class="form-control" required>
+      <input id="telefon" name="telefon" class="form-control"
+             type="tel" inputmode="numeric"
+             placeholder="contoh: 0123456789"
+             required />
 
       <label for="matrik">Matrik</label>
-      <input id="matrik" name="matrik" class="form-control" required>
+      <input id="matrik" name="matrik" class="form-control" required />
 
       <label for="universiti">Universiti</label>
       <select id="universiti" name="universiti" class="form-select" required>
         <option value="">-- Pilih Universiti --</option>
         <option value="UNIMAS">UNIMAS</option>
-        <option value="UITM">UITM</option>
+        <option value="UiTM">UiTM</option>
         <option value="Lain-lain">Lain-lain</option>
       </select>
 
       <label for="lokasi">Lokasi</label>
-      <input id="lokasi" name="lokasi" class="form-control" required>
+      <input id="lokasi" name="lokasi" class="form-control" required />
 
       <label for="tarikh_hantar">Tarikh Hantar</label>
-      <input id="tarikh_hantar" name="tarikh_hantar" type="date" class="form-control" required>
+      <input id="tarikh_hantar" name="tarikh_hantar" type="date" class="form-control" required />
 
       <label for="nota">Nota</label>
-      <input id="nota" name="nota" class="form-control">
+      <textarea id="nota" name="nota" class="form-control" rows="3" placeholder="(jika ada)"></textarea>
 
       <label for="image">Gambar Barang</label>
-      <input type="file" id="image" name="image" accept="image/*" style="display:none">
+      <input type="file" id="image" name="image" accept="image/*" style="display:none" />
       <button type="button" class="btn-upload" id="addImageBtn">Add Image</button>
-      <img id="imagePreview" class="image-preview" style="display:none" />
+      <img id="imagePreview" class="image-preview" style="display:none" alt="Pratonton gambar" />
 
-      <button type="submit" class="btn-maroon">Hantar</button>
+      <button type="submit" id="submitBtn" class="btn-maroon">
+        Hantar
+      </button>
     </form>
-    <div id="result"></div>
+
+    <div id="result" role="status" aria-live="polite"></div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
