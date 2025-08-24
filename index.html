@@ -1,68 +1,48 @@
-console.log("Sistem Pengembalian Barang dimulakan.");
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borang Pengembalian Barang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Borang Pengembalian Barang</h2>
+    <form id="form-barang">
+      <label>Nama:</label>
+      <input type="text" id="nama" required>
 
-const imageInput = document.getElementById("image");
-const addImageBtn = document.getElementById("addImageBtn");
-const imagePreview = document.getElementById("imagePreview");
-let imageBase64 = "";
+      <label>No. Telefon:</label>
+      <input type="text" id="telefon" required>
 
-// Button untuk trigger pilih gambar
-addImageBtn.addEventListener("click", function () {
-  imageInput.click();
-});
+      <label>No. Matrik:</label>
+      <input type="text" id="matrik" required>
 
-// Preview gambar
-imageInput.addEventListener("change", function () {
-  if (imageInput.files && imageInput.files[0]) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      imagePreview.src = e.target.result;
-      imagePreview.style.display = "block";
-      imageBase64 = e.target.result; // base64 image string
-    };
-    reader.readAsDataURL(imageInput.files[0]);
-  }
-});
+      <label>Universiti:</label>
+      <input type="text" id="universiti" required>
 
-document.getElementById("form-barang").addEventListener("submit", function (e) {
-  e.preventDefault();
+      <label>Lokasi Penghantaran:</label>
+      <input type="text" id="lokasi" required>
 
-  const data = {
-    nama: document.getElementById("nama").value,
-    telefon: document.getElementById("telefon").value,
-    matrik: document.getElementById("matrik").value,
-    universiti: document.getElementById("universiti").value,
-    lokasi: document.getElementById("lokasi").value,
-    tarikh_hantar: document.getElementById("tarikh_hantar").value,
-    nota: document.getElementById("nota").value,
-    image: imageBase64 // base64 string, kosong jika tiada gambar
-  };
+      <label>Tarikh Pengembalian:</label>
+      <input type="date" id="tarikh_hantar" required>
 
-  fetch("https://script.google.com/macros/s/AKfycbwinzBuThzSvTRFoMvZIhrCV59w1WIiWkSWSslCk_LdswTst9QNRdlEJKYliC2byHjZ/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  })
-    .then(response => response.json()) // parse JSON dari Apps Script
-    .then(result => {
-      if (result.success) {
-        let msg = "✅ " + result.message;
-        if (result.imageUrl) {
-          msg += `<br><a href="${result.imageUrl}" target="_blank">📷 Lihat Gambar</a>`;
-        }
-        document.getElementById("result").innerHTML = msg;
-      } else {
-        document.getElementById("result").innerText = "❌ " + result.message;
-      }
+      <label>Nota:</label>
+      <textarea id="nota"></textarea>
 
-      // Reset form
-      document.getElementById("form-barang").reset();
-      imagePreview.style.display = "none";
-      imagePreview.src = "";
-      imageBase64 = "";
-    })
-    .catch(error => {
-      document.getElementById("result").innerText = "⚠️ Ralat: " + error;
-    });
-});
+      <label>Gambar Barang:</label>
+      <input type="file" id="image" accept="image/*" style="display:none;">
+      <button type="button" id="addImageBtn">📸 Pilih Gambar</button>
+      <img id="imagePreview" style="display:none; max-width:200px; margin-top:10px;">
+
+      <button type="submit">Hantar</button>
+    </form>
+
+    <!-- 📌 Tempat tunjuk mesej berjaya / gagal -->
+    <div id="result" style="margin-top:15px; font-weight:bold;"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
