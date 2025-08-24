@@ -12,13 +12,13 @@
       padding: 0;
     }
     .container {
-      max-width: 420px;
+      max-width: 430px;
       margin: 40px auto 0 auto;
       background: #fff7fb;
-      border: 2px solid #801336;
-      border-radius: 16px;
-      box-shadow: 0 2px 12px #cfa3b9;
-      padding: 24px 18px 18px 18px;
+      border: 3.5px solid #801336;
+      border-radius: 22px;
+      box-shadow: 0 4px 18px #cfa3b9;
+      padding: 28px 16px 18px 16px;
     }
     h1 {
       text-align: center;
@@ -39,15 +39,15 @@
     .form-control {
       width: 100%;
       padding: 8px 10px;
-      border: 1px solid #cfa3b9;
-      border-radius: 7px;
+      border: 1.5px solid #cfa3b9;
+      border-radius: 9px;
       background: #fde5ed;
       font-size: 1rem;
       margin-bottom: 15px;
       transition: border .2s;
     }
     .form-control:focus {
-      border: 1.5px solid #801336;
+      border: 2px solid #801336;
       outline: none;
       background: #fff0f6;
     }
@@ -55,7 +55,7 @@
       background: #801336;
       color: #fff7fb;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 10px 0;
       width: 100%;
       font-size: 1.09rem;
@@ -68,6 +68,16 @@
     .btn-maroon:hover {
       background: #c72c6c;
     }
+    .image-preview {
+      display: block;
+      margin: 0 auto 10px auto;
+      max-width: 90%;
+      max-height: 160px;
+      border: 2px dashed #801336;
+      border-radius: 12px;
+      background: #fde5ed;
+      object-fit: contain;
+    }
     #result {
       text-align: center;
       margin-top: 16px;
@@ -76,10 +86,27 @@
       font-weight: bold;
       letter-spacing: 1px;
     }
+    .btn-upload {
+      background: #cfa3b9;
+      color: #801336;
+      border: none;
+      border-radius: 7px;
+      padding: 7px 0;
+      font-size: 1rem;
+      font-weight: bold;
+      width: 100%;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 4px #dcdcdc;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-upload:hover {
+      background: #fbe3eb;
+    }
     @media (max-width: 600px) {
       .container {
         max-width: 97vw;
-        padding: 14px 6vw 10px 6vw;
+        padding: 14px 4vw 10px 4vw;
         margin-top: 18px;
       }
       h1 {
@@ -112,6 +139,11 @@
 
       <label for="nota">Nota</label>
       <input id="nota" class="form-control">
+
+      <label for="image">Gambar Barang</label>
+      <input type="file" id="image" accept="image/*" style="display:none">
+      <button type="button" class="btn-upload" id="addImageBtn">Add Image</button>
+      <img id="imagePreview" class="image-preview" style="display:none" />
 
       <button type="submit" class="btn-maroon">Hantar</button>
     </form>
