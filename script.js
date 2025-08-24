@@ -1,4 +1,3 @@
-// script asas untuk interaksi di laman utama
 console.log("Sistem Pengembalian Barang dimulakan.");
 
 document.getElementById("form-barang").addEventListener("submit", function(e) {
