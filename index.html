@@ -4,44 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Borang Pengembalian Barang</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f9; }
+    form { max-width: 500px; margin: auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    label { display: block; margin-top: 10px; font-weight: bold; }
+    input, textarea, select { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 6px; }
+    button { margin-top: 15px; padding: 10px; width: 100%; background: #4CAF50; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
+    button:hover { background: #45a049; }
+    #result { margin-top: 15px; text-align: center; font-weight: bold; }
+    img { margin-top: 10px; max-width: 100%; display: none; border-radius: 6px; }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Borang Pengembalian Barang</h2>
-    <form id="form-barang">
-      <label>Nama:</label>
-      <input type="text" id="nama" required>
 
-      <label>No. Telefon:</label>
-      <input type="text" id="telefon" required>
+  <h2>Borang Pengembalian Barang</h2>
+  <form id="returnForm">
+    <label>Nama:</label>
+    <input type="text" name="nama" required>
 
-      <label>No. Matrik:</label>
-      <input type="text" id="matrik" required>
+    <label>No. Telefon:</label>
+    <input type="text" name="telefon" required>
 
-      <label>Universiti:</label>
-      <input type="text" id="universiti" required>
+    <label>No. Matrik:</label>
+    <input type="text" name="matrik" required>
 
-      <label>Lokasi Penghantaran:</label>
-      <input type="text" id="lokasi" required>
+    <label>Universiti:</label>
+    <input type="text" name="universiti">
 
-      <label>Tarikh Pengembalian:</label>
-      <input type="date" id="tarikh_hantar" required>
+    <label>Lokasi Penghantaran:</label>
+    <input type="text" name="lokasi">
 
-      <label>Nota:</label>
-      <textarea id="nota"></textarea>
+    <label>Tarikh Hantar:</label>
+    <input type="date" name="tarikh_hantar" required>
 
-      <label>Gambar Barang:</label>
-      <input type="file" id="image" accept="image/*" style="display:none;">
-      <button type="button" id="addImageBtn">📸 Pilih Gambar</button>
-      <img id="imagePreview" style="display:none; max-width:200px; margin-top:10px;">
+    <label>Nota:</label>
+    <textarea name="nota"></textarea>
 
-      <button type="submit">Hantar</button>
-    </form>
+    <label>Upload Gambar:</label>
+    <input type="file" id="image" accept="image/*">
+    <img id="imagePreview" />
 
-    <!-- 📌 Tempat tunjuk mesej berjaya / gagal -->
-    <div id="result" style="margin-top:15px; font-weight:bold;"></div>
-  </div>
+    <button type="submit">Hantar</button>
+  </form>
+
+  <div id="result"></div>
 
   <script src="script.js"></script>
 </body>
