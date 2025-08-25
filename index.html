@@ -12,33 +12,33 @@
   <div class="container">
     <h1>Borang Penghantaran Balik Barang</h1>
     <form id="returnForm">
-      <label>Nama Penuh:</label>
-      <input type="text" name="nama" class="form-control" required />
+      <label for="nama">Nama Penuh:</label>
+      <input type="text" id="nama" name="nama" class="form-control" required />
 
-      <label>No. Telefon:</label>
-      <input type="tel" name="telefon" class="form-control" required />
+      <label for="telefon">No. Telefon:</label>
+      <input type="tel" id="telefon" name="telefon" class="form-control" required />
 
-      <label>Nombor Matriks:</label>
-      <input type="text" name="matrik" class="form-control" required />
+      <label for="matrik">Nombor Matriks:</label>
+      <input type="text" id="matrik" name="matrik" class="form-control" required />
 
-      <label>Universiti:</label>
-      <select name="universiti" class="form-select" required>
+      <label for="universiti">Universiti:</label>
+      <select id="universiti" name="universiti" class="form-select" required>
         <option value="">-- Pilih --</option>
         <option value="UNIMAS">UNIMAS</option>
         <option value="UiTM">UiTM</option>
         <option value="Lain-lain">Lain-lain</option>
       </select>
 
-      <label>Lokasi Penghantaran:</label>
-      <input type="text" name="lokasi" class="form-control" required />
+      <label for="lokasi">Lokasi Penghantaran:</label>
+      <input type="text" id="lokasi" name="lokasi" class="form-control" required />
 
-      <label>Tarikh Penghantaran:</label>
-      <input type="date" name="tarikh_hantar" class="form-control" required />
+      <label for="tarikh_hantar">Tarikh Penghantaran:</label>
+      <input type="date" id="tarikh_hantar" name="tarikh_hantar" class="form-control" required />
 
-      <label>Nota Tambahan:</label>
-      <textarea name="nota" class="form-control"></textarea>
+      <label for="nota">Nota Tambahan:</label>
+      <textarea id="nota" name="nota" class="form-control"></textarea>
 
-      <label>Gambar Barang:</label>
+      <label for="image">Gambar Barang:</label>
       <input type="file" id="image" accept="image/*" style="display:none" />
       <button type="button" id="addImageBtn" class="btn-upload">📷 Tambah Gambar</button>
       <img id="imagePreview" class="image-preview" style="display:none" />
