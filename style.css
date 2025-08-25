@@ -1,0 +1,193 @@
+/* === Font & Base === */
+body {
+  background: #fbe3eb;
+  font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* === Container === */
+.container {
+  max-width: 430px;
+  margin: 40px auto 0;
+  background: #fff7fb;
+  border: 3.5px solid #801336;
+  border-radius: 22px;
+  padding: 28px 18px;
+  box-shadow: 0 4px 18px #cfa3b9;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* === Heading === */
+h1 {
+  text-align: center;
+  color: #801336;
+}
+
+/* === Labels & Inputs === */
+label {
+  color: #801336;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.form-control,
+.form-select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1.5px solid #cfa3b9;
+  border-radius: 9px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* === Focus Style === */
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #801336;
+  box-shadow: 0 0 6px rgba(128, 19, 54, 0.3);
+}
+
+/* === Buttons === */
+.btn-maroon {
+  background: #801336;
+  color: #fff7fb;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-maroon:hover {
+  background-color: #5e0f27;
+  transform: scale(1.02);
+}
+
+.btn-upload {
+  background: #cfa3b9;
+  color: #801336;
+  border: none;
+  border-radius: 7px;
+  padding: 7px;
+  width: 100%;
+  margin-top: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-upload:hover {
+  background-color: #e2b9cc;
+  transform: scale(1.02);
+}
+
+.btn-theme {
+  background: #801336;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 20px auto;
+  display: block;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* === Image Preview === */
+.image-preview {
+  display: block;
+  margin: 10px auto;
+  max-width: 90%;
+  border: 2px dashed #801336;
+  border-radius: 10px;
+}
+
+/* === Result Message === */
+#result {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.result-ok {
+  color: green;
+}
+
+.result-err {
+  color: red;
+}
+
+/* === Dark Mode === */
+body.dark {
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark .container {
+  background: #2c2c2c;
+  border-color: #ff99cc;
+  box-shadow: 0 4px 18px #000;
+}
+
+body.dark label {
+  color: #ff99cc;
+}
+
+body.dark .form-control,
+body.dark .form-select,
+body.dark textarea {
+  background: #3a3a3a;
+  color: #f0f0f0;
+  border-color: #ff99cc;
+}
+
+body.dark .btn-maroon {
+  background: #ff99cc;
+  color: #1e1e1e;
+}
+
+body.dark .btn-upload {
+  background: #e2b9cc;
+  color: #1e1e1e;
+}
+
+body.dark .btn-theme {
+  background: #ff99cc;
+  color: #1e1e1e;
+}
+
+/* === Responsive Mobile === */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 12px;
+    border-radius: 16px;
+  }
+
+  .form-control,
+  .form-select,
+  textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .btn-maroon,
+  .btn-upload,
+  .btn-theme {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+}
